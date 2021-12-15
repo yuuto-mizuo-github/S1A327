@@ -1,0 +1,22 @@
+        /*共通設定*/
+        div {
+            width: 100px;
+            height: 100px;
+            padding:1em;
+            margin: 2em 2em 4em;
+            background-color: #ad4444;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        /*右に伸びる*/
+        .width { transition: width 0.5s ease-out;}
+        .width:hover {width: 800px;}
+
+        /*四角から丸に*/
+        .circle {transition: border-radius 0.2s;}
+        .circle:hover { border-radius: 50%;}
+
+        /*ホバーして1秒後にズームアップ*/
+        .scale { transition: transform 0.7s ease-in-out 0.5s;}
+        .scale:hover { transform: scale(1.5);}
