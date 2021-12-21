@@ -9,13 +9,13 @@ div.solid, div.dotted, div.dashed, div.double {
   border-color: #f00;
 }
 /*ここから */
-div.solid {}
+div.solid { border-style: solid;}
 
-div.dotted {}
+div.dotted {border-style: dotted;}
 
-div.dashed {}
+div.dashed {border-style: dashed;}
 
-div.double {}
+div.double {border-style: double;}
 /*ここまで */
 p {
   text-align: center;
@@ -26,7 +26,7 @@ p {
   width: 160px;
   padding: 6px;
   /*ここから */
-
+border: 4px solid rgba(0, 0, 0, 0);
   /*ここまで */
 }
 .second p {
@@ -38,7 +38,9 @@ p {
 }
 /*ここから */
 /* 左辺・下辺のみ */
-p.leftBottom {}
+p.leftBottom {
+  border-left: 10px solid#f00;
+}
 
 /* 上下に二重線 */
 p.TopBottom {}
