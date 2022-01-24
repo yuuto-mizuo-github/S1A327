@@ -9,6 +9,8 @@
   margin: 0;
 }
 body {
+  background: url(wood.jpg) #504643 left top repeat;
+  text-align: center;
   margin: 0;
   padding: 40px;
 }
@@ -25,7 +27,12 @@ header
 ----------------------------*/
 header { margin-bottom: 60px; }
 h1 { margin-bottom: 20px; }
-ul { background: #fff; }
+ul { background: #fff;
+list-style: none;
+padding: 0;
+display: flex;}
+li {flex:1 1 20%;}
+
 a {
   display: block;
   color: #196f6a;
