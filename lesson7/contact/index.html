@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="utf-8">
   <!-- ページタイトル -->
@@ -21,6 +22,7 @@
   <!-- スタイルの読み込み -->
   <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
   <!-- ヘッダー -->
   <header class="header">
@@ -52,32 +54,39 @@
         <img src="img/ttl_contact.svg" alt="お問い合わせフォーム">
       </h2>
       <!-- フォーム -->
-
-      <!-- お名前 -->
-      <div>
-        <!-- 項目名 -->
-        <label>お名前</label>
-        <!-- 入力欄：テキスト -->
-
-      </div>
-      <!-- E-Mail -->
-      <div>
-        <!-- 項目名 -->
-        <label>E-Mail</label>
-        <!-- 入力欄：email -->
-
-      </div>
-      <!-- お問い合わせ内容 -->
-      <div>
-        <!-- 項目名 -->
-        <label>お問い合わせ内容</label>
-        <!-- 入力欄：テキストエリア -->
-
-      </div>
-      <!-- 送信ボタン -->
-      <div>
-
-      </div>
+      <form action="">
+        <!-- お名前 -->
+        <div class="form-group">
+          <!-- 項目名 -->
+          <label for="yourName" class="form-label">お名前</label>
+          <!-- 入力欄：テキスト -->
+          <div>
+            <input type="text" name="お名前" id="yourName">
+          </div>
+        </div>
+        <!-- E-Mail -->
+        <div class="form-group">
+          <!-- 項目名 -->
+          <label for="yourEmail" class="form-label">E-Mail</label>
+          <!-- 入力欄：email -->
+          <div>
+            <input type="email" name="E-Mail" id="yourEmail">
+          </div>
+        </div>
+        <!-- お問い合わせ内容 -->
+        <div class="form-group">
+          <!-- 項目名 -->
+          <label for="yourInquiry" class="form-label">お問い合わせ内容</label>
+          <!-- 入力欄：テキストエリア -->
+          <div>
+            <textarea name="お問い合わせ先" id="yourInquiry" cols="30" rows="10"></textarea>
+          </div>
+        </div>
+        <!-- 送信ボタン -->
+        <div class="form-btn">
+          <button type="submit"><img src="../img/btn_send.svg" alt="送信する"></button>
+        </div>
+      </form>
 
       <!-- フォームここまで -->
     </section>
@@ -111,4 +120,5 @@
   </footer>
   <!-- フッターここまで -->
 </body>
+
 </html>

@@ -222,29 +222,34 @@ address {
 /* 入場料（テーブル） */
 /* テーブル全体への指定 */
 .price-table {
-  
-  
-  /* テーブルの境界線が重ねて表示する */
-  
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
 }
 /* <thead>に対する指定 */
-
-  
-  
+.price-table thead {
+  color: #fff;
+  background-color: #4184e2;
+}
 
 /* <th>と<td>に対する指定 */
-
+.price-table th,
+.price-table td {
+  padding: 20px 15px;
+  font-weight: 500;
+  border: 1px solid #707070;
+}
   
-  
-  
-
 /* <tbody>内の<th>に対する指定 */
-
+.price-table tbody th {
+  text-align: left;
+  background-color: #fff;
+}
   
-  
-
 /* <tbody>内の<td>に対する指定 */
-
+.price-table tbody td {
+  background-color: #fff;
+}
   
 
 
@@ -252,39 +257,53 @@ address {
   お問い合わせフォーム
 -------------------------------------------------- */
 /* フォームの3つのブロックに対する指定 */
-.form-group {
-  
+.form-group{
+  margin-bottom: 20px;
 }
 /* 項目名に対する指定 */
 .form-label {
-  
-  
-  
+  display: block;
+  margin-bottom: 10px;
+  color: #032559;
 }
 /* 送信ボタンを囲む<div>に対する指定 */
 .form-btn {
-  
-  
+  margin: 30px 0;
+  text-align: center;
 }
 /* 入力欄に対する指定 */
-
-  
-  
-  
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #999;
+}
 
 /* 入力欄が:focus（入力状態）のとき */
-
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #032559;
+  outline: none;
+}
   
   
 
 /* 送信ボタン */
-
+button[type="submit"]{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
   
   
   
 
 /* 送信ボタンが:hoverのとき */
-
+button[type="submit"]:hover {
+  opacity: 0.65;
+}
   
 
 /* --------------------------------------------------
@@ -297,18 +316,18 @@ address {
 @media screen and (min-width: 768px) {
   /* ヘッダー */
   .header {
-    
+    padding: 40px 0 0;
   }
   /* ロゴ */
   .logo {
-    
-    
-    
-    
+    width: auto;
+    margin: 0 0 20px;
+    padding: 0;
+    text-align: center;
   }
   /* ハンバーガーボタン */
   .btn-burger {
-    
+    display: none
     /* 768px以上では使用しない */
   }
   /* ナビゲーション */
@@ -317,16 +336,21 @@ address {
   }
   .nav-list {
     /* flexbox（横並びにする要素の親に指定） */
-    
-    /* フレックスアイテムを主軸方向（横方向）中央揃えで配置 */
-    
-    /* フレックスアイテムを交差軸方向（縦方向）中央揃えで配置 */
-    
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     padding: 0;
   }
   .nav-list li {
     /* フレックスアイテムに対する指定 */
-    
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
     padding: 0 20px;
     line-height: 1;
     border-right: 1px solid #fff;
@@ -338,7 +362,9 @@ address {
   }
   /* 幅768px未満でメニューを開いた状態から、ウィンドウ幅を768px以上に広げたとき、メニューにflexboxを適用して<li>を横並び表示に切り替える */
   .nav-toggle:checked~.nav .nav-list {
-    
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   /* セクション */
   .section {
@@ -355,6 +381,12 @@ address {
   .footer-sns {
     margin: 30px 0;
   }
+  .section {
+    margin-bottom: 100px;
+  }
+  .heading-section{
+    margin-bottom: 50px;
+  }
   /* --------------------------------------------------
   トップページ
   -------------------------------------------------- */
@@ -365,14 +397,19 @@ address {
   }
   /* 横並び */
   .row {
-    /* flexbox（横並びにする要素の親に指定） */
-     
-    
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
   /* 横並び要素 */
   .col {
     /* フレックスアイテムに対する指定 */
-    
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 32%;
+    flex: 0 1 32%;
     margin: 0;
   }
   /* --------------------------------------------------
@@ -380,11 +417,11 @@ address {
   -------------------------------------------------- */
   /* 入場料（テーブル） */
   .price-table {
-    
+    font-size: 16px;
   }
   /* <th>と<td>に対する指定 */
   .price-table th, .price-table td {
-    
+    padding: 20px;
   }
   /* --------------------------------------------------
   お問い合わせフォーム
@@ -392,23 +429,27 @@ address {
   /* フォームの3つのブロックに対する指定 */
   .form-group {
     /* flexbox（横並びにする要素の親に指定） */
-    
-    
-    /* 横幅の最大値 */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 800px;
     margin-bottom: 10px;
   }
   /* 項目名に対する指定 */
   .form-label {
     /* フレックスアイテムに対する指定 */
-    
-    
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 12em;
+    max-width: 12em;
     margin: 0;
     padding-top: 5px;
   }
   /* 入力欄を囲む<div>に対する指定 */
   .form-col {
     /* フレックスアイテムに対する指定 */
-    
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
   }
 }
 /* --------------------------------------------------
